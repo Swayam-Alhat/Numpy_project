@@ -43,3 +43,5 @@ Checking compatibility (right to left):
 (3, 4) and (3,)    # ✗ NOT compatible (4 ≠ 3, and neither is 1)
 (2, 3) and (3, 2)  # ✗ NOT compatible (dimensions don't align)
 ```
+
+### Aggregate function

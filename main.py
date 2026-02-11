@@ -14,5 +14,8 @@ ages = np.array([[28,19,19,10],
                  [12,45,57,28]])
 teens = ages[ages <= 19]
 adults = ages[(ages > 19) & (ages <= 50)]
-print(adults)
+
+seniors = np.where(ages > 40, ages, 0)
+print(seniors)
+print(seniors.ndim)
 

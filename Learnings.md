@@ -45,3 +45,5 @@ Checking compatibility (right to left):
 ```
 
 ### Aggregate function
+
+This functions summarizes all data and returns a single value. Like, `np.sum(array)` which returns single value i.e summation of whole elements of array. `np.min(array)` & `np.max(array)` returns minimum and maximum element from array. We also `np.mean(array)` which returns mean of array. There are other aggregate functions too, but this above are mostly used

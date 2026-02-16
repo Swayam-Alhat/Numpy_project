@@ -148,4 +148,78 @@ Dimensions of array_3d : 3
 
 #### Properties of Numpy array
 
-`size`,`shape`,`ndim`, & `dtype` are important properties of numpy array
+`size`,`shape`,`ndim`, & `dtype` are important properties of numpy array. Read examples.
+
+### Indexing & Slicing
+
+For 1D arrays, basic indexing & slicing works the same as Python `lists`
+
+#### 2d array
+
+```python
+import numpy as np
+
+array_2d = np.array([[1,2,3],[4,5,6]])
+print(array_2d)
+print(array_2d.ndim) # It has 2 dimension. So Its a 2D array
+print(array_2d.shape)
+# (2,3) 2 = rows & 3 = columns
+# This means array has 2 rows & each row has 3 columns or values
+# This 2D array has 2 dimensions
+# 1st is Row & 2nd is Column
+
+```
+
+```
+[[1 2 3]
+ [4 5 6]]
+2
+(2, 3)
+```
+
+#### 3d array
+
+```python
+import numpy as np
+
+array_3d = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
+
+print(array_3d)
+print(array_3d.ndim) # Its 3 dimension array i.e 3d array
+print(array_3d.shape)
+# (2,2,3) This means, array have total 3 dimensions.
+# 1st dim is layer. i.e 2 = layers
+# 2nd dim is rows (Rows in each layer). This array have 2 rows in each layer
+# 3rd dim is columns (each row has 3 columns / values). This array have 2 rows, each contains 3 columns.
+
+# Thus (2,2,3) refers to 2 layers each contains 2 rows and each row contains 3 columns
+```
+
+```
+[[[ 1  2  3]
+  [ 4  5  6]]
+
+ [[ 7  8  9]
+  [10 11 12]]]
+3
+(2, 2, 3)
+```
+
+> **Note:** Terms like _layers_, _rows_, and _columns_ are informal and just for intuition.
+> In NumPy, dimensions are called **axes**. The 1st dimension is **axis 0**, 2nd is **axis 1**, and 3rd is **axis 2** and so on.
+
+> In Numpy arrays, we only use **1 square brackets** to perform indexing and slicing
+
+#### Indexing with 2d array.
+
+```python
+import numpy as np
+
+array_2d = np.array([[1,2,3],[4,5,6]])
+print(array_2d[0,1]) # 2
+# So, In [], we specify index positions of dimensions.
+# That is, as we know, 2d arrays have 2 dimensions. 1st is row & 2nd is column.
+# So while indexing 2d array, we specify index positions of rows and columns
+# i.e array_2d[0,1] This means row at 0th index position & column at 1st index position. So we get 2
+# So basically we specify index position of dimensions in square brackets and each dimension is separated by ",". i.e [0,1] means 0th row (1st dimension) & column at 1st index (2nd dimension)
+```

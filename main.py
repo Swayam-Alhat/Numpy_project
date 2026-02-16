@@ -1,14 +1,9 @@
 import numpy as np
 
-array_1d = np.array([1,2,3,4,5]) # 1d array
-print(array_1d)
-print(f"Dimensions of array_1d : {array_1d.ndim}") # 1
-
-
 array_2d = np.array([[1,2,3],[4,5,6]])
-print(array_2d)
-print(f"Dimensions of array_2d : {array_2d.ndim}") # 2
-
-array_3d = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
-print(array_3d)
-print(f"Dimensions of array_3d : {array_3d.ndim}") # 3
+print(array_2d[0,1]) # 2 
+# So, In [], we specify index positions of dimensions. 
+# That is, as we know, 2d arrays have 2 dimensions. 1st is row & 2nd is column. 
+# So while indexing 2d array, we specify index positions of rows and columns
+# i.e array_2d[0,1] This means row at 0th index position & column at 1st index position. So we get 2
+# So basically we specify index position of dimensions in square brackets and each dimension is separated by ",". i.e [0,1] means 0th row (1st dimension) & column at 1st index (2nd dimension)

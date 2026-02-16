@@ -41,7 +41,7 @@ There are also other ways to create arrays like `np.zeros()`, `np.ones()`, `np.l
 
 To perform operations on python list, we need to use `for` loop which is not efficient and is time consuming. Whereas, with numpy arrays, we can perform operations without writing a `for` loop. Numpy allows us to perform _vectorized operations_ on arrays which means we can directly perform operation on each element in array without looping.
 
-_Note_ : To get data type of elements/values in an array, we use `dtype` attribute.
+_Note_ : To get data type of elements/values in an array, we use `dtype` property.
 Example
 
 ```python
@@ -145,3 +145,7 @@ Dimensions of array_2d : 2
   [10 11 12]]]
 Dimensions of array_3d : 3
 ```
+
+#### Properties of Numpy array
+
+`size`,`shape`,`ndim`, & `dtype` are important properties of numpy array

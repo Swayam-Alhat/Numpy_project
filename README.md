@@ -224,3 +224,44 @@ print(array_2d[0,1]) # 2
 # So basically we specify index position of dimensions in square brackets and each dimension is separated by ",".
 # i.e [0,1] means 0th row (1st dimension) & column at 1st index (2nd dimension)
 ```
+
+```python
+import numpy as np
+
+array_2d = np.array([[1,2,3],[4,5,6]])
+print(array_2d[1,0:2]) # [4,5]
+# We want 4,5 which is in 2nd row,
+# So we specify index position of that row i.e [1,]
+# Then we want 2 elements from that row,
+# So we specify columns index positions from start to end of that row
+# using ":". i.e [1,0:2]
+# 0:2 means we want columns from 0th index position to 1st index position.
+# python excludes the end value.
+# So, 0:2 means start from 0th index & stop before 2nd index (i.e 0th and 1st index)
+```
+
+```python
+import numpy as np
+
+array_2d = np.array([[1,2,3],[4,5,6]])
+print(array_2d)
+# access whole 2nd column
+print(array_2d[:,1]) # [2,5]
+# As we want to access all elements of 2nd column, so specify all rows.
+# i.e ":". This means from start to end. And this is at row position,
+# So from 0th row till last row. And then we specify 1 which means column
+# at 1st index position. So we get elements which are in 1st index column
+# and from all rows
+```
+
+```python
+import numpy as np
+
+array_2d = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(array_2d)
+print(array_2d[1:,:2])
+"""[[4,5]
+    [7,8]]"""
+# [1:,:2] This means considering row, we want rows from 1st index position till last & In those rows, we want columns from start (i.e 0th index) up to (but not including) 2nd index, i.e columns at 0th and 1st index.
+# So we get a submatrix of rows from 1st index till last & columns from 0th till 1st index.
+```

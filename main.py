@@ -1,11 +1,14 @@
 import numpy as np
 
-array_2d = np.array([[1,2,3],[4,5,6],[7,8,9]])
-print(array_2d)
-print(array_2d[1:,:2]) 
-"""[[4,5]
-    [7,8]]"""
-# [1:,:2] This means considering row, we want rows from 1st index position till last & In those rows, we want columns from start (i.e 0th index) up to (but not including) 2nd index, i.e columns at 0th and 1st index.
-# So we get a submatrix of rows from 1st index till last & columns from 0th till 1st index.
+array_3d = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
+print(array_3d.shape)
+print(array_3d[1,0,2]) #9
 
-
+# access 2nd column
+print(array_3d[:,:,1]) 
+""""[[2 5]
+     [8 11]]"""
+# [:,:,1] means consider all layers 
+# and consider all rows within that layers.
+# And at last, within those rows, only consider 
+# column at index position 1

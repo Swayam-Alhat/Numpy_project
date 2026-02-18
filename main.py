@@ -1,9 +1,12 @@
 import numpy as np
 
 array1 = np.array([1,2,3])
-array2 = np.array([4,5,6])
-
-print(array1 + array2) 
-# corresponding elements of both arrays are added and print new array
-# i.e [5,7,9]
-# Similarly for sub,mul,div, modulo etc
+scalar = 2
+print(array1 + scalar)
+# This outputs an array [3 4 5]
+# This is like array1 is added with [2 2 2] and 
+# we get new array which has elements that are
+# addition of corresponding arrays
+# This process where array performs operation with scalar
+# value but perform operation in same way it does with different
+# array 

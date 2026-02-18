@@ -246,7 +246,7 @@ import numpy as np
 array_2d = np.array([[1,2,3],[4,5,6]])
 print(array_2d)
 # access whole 2nd column
-print(array_2d[:,1]) # [2,5]
+print(array_2d[:,1]) # [2 5]
 # As we want to access all elements of 2nd column, so specify all rows.
 # i.e ":". This means from start to end. And this is at row position,
 # So from 0th row till last row. And then we specify 1 which means column
@@ -302,16 +302,16 @@ import numpy as np
 array = np.array([1,2,3,4,5,6,7,8,9,10])
 # conditional indexing
 print(array[array > 5])
-# [6,7,8,9,10] Return elements which satisfies the condition
+# [6 7 8 9 10] Return elements which satisfies the condition
 
 
 print(array[array % 2 == 0])
-# [2,4,6,8,10] return even elements
+# [2 4 6 8 10] return even elements
 ```
 
 > Conditional indexing can also be done on multi-dimensional arrays, and it works the same way i.e it returns all elements that satisfy the condition.
 
-#### Array operations
+### Array operations
 
 When we perform operation between arrays then the operation is performed between each corresponding element of both arrays.  
 Example
@@ -325,7 +325,23 @@ array2 = np.array([4,5,6])
 
 print(array1 + array2)
 # corresponding elements of both arrays are added and print new array
-# i.e [5,7,9]
+# i.e [5 7 9]
 # Similarly for sub,mul,div, modulo etc
 
+```
+
+We can also perform array operation with scalar value. When we perform any operation between an array and scalar value, the scalar value perform operations with each element of that array.  
+Example
+
+```python
+import numpy as np
+
+array1 = np.array([1,2,3])
+scalar = 2
+print(array1 + scalar)
+# This outputs an array [3 4 5]
+# This is like array1 is added with an array [2 2 2]
+# This is called broadcasting — NumPy virtually expands the scalar
+# into an array of the same shape e.g [2 2 2] and then
+# performs element-wise operation.
 ```

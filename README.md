@@ -290,3 +290,25 @@ print(array_3d[:,:,1])
 # column at index position 1
 
 ```
+
+#### Conditional Indexing
+
+Numpy's powerful feature is conditional indexing which allows us to perform indexing using a condition.  
+Example
+
+```python
+import numpy as np
+
+array = np.array([1,2,3,4,5,6,7,8,9,10])
+# conditional indexing
+print(array[array > 5])
+# [6,7,8,9,10] Return elements which satisfies the condition
+
+
+print(array[array % 2 == 0])
+# [2,4,6,8,10] return even elements
+```
+
+> Conditional indexing can also be done on multi-dimensional arrays, and it works the same way i.e it returns all elements that satisfy the condition.
+
+#### Array operations

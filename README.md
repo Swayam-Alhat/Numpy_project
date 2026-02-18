@@ -312,3 +312,20 @@ print(array[array % 2 == 0])
 > Conditional indexing can also be done on multi-dimensional arrays, and it works the same way i.e it returns all elements that satisfy the condition.
 
 #### Array operations
+
+When we perform operation between arrays then the operation is performed between each corresponding element of both arrays.  
+Example
+
+```python
+
+import numpy as np
+
+array1 = np.array([1,2,3])
+array2 = np.array([4,5,6])
+
+print(array1 + array2)
+# corresponding elements of both arrays are added and print new array
+# i.e [5,7,9]
+# Similarly for sub,mul,div, modulo etc
+
+```

@@ -270,8 +270,7 @@ print(array_2d[1:,:2])
 
 #### Indexing with 3d array
 
-Indexing with 3d arrays will be a bit similar as we done for 2d array. Just instead of 2 dimensions, we have 3 dimensions, so we need to specify index positions of 3 dimensions. i.e array[ index_of_d1, index_of_d2, index_of_d3 ]  
-Example
+Indexing with 3d arrays will be a bit similar as we done for 2d array. Just instead of 2 dimensions, we have 3 dimensions, so we need to specify index positions of 3 dimensions. i.e array[ index_of_d1, index_of_d2, index_of_d3 ]
 
 ```python
 import numpy as np
@@ -293,8 +292,7 @@ print(array_3d[:,:,1])
 
 #### Conditional Indexing
 
-Numpy's powerful feature is conditional indexing which allows us to perform indexing using a condition.  
-Example
+Numpy's powerful feature is conditional indexing which allows us to perform indexing using a condition.
 
 ```python
 import numpy as np
@@ -313,8 +311,7 @@ print(array[array % 2 == 0])
 
 ### Array operations
 
-When we perform operation between arrays then the operation is performed between each corresponding element of both arrays.  
-Example
+When we perform operation between arrays then the operation is performed between each corresponding element of both arrays.
 
 ```python
 
@@ -330,8 +327,7 @@ print(array1 + array2)
 
 ```
 
-We can also perform array operation with scalar value. When we perform any operation between an array and scalar value, the scalar value perform operations with each element of that array.  
-Example
+We can also perform array operation with scalar value. When we perform any operation between an array and scalar value, the scalar value perform operations with each element of that array.
 
 ```python
 import numpy as np

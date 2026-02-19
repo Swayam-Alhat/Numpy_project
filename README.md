@@ -402,3 +402,58 @@ array1.reshape(2, -1)  # NumPy auto-calculates columns
 # Here -1 tells NumPy "figure out the columns yourself",
 # and since 6 / 2 = 3, it automatically sets columns to 3.
 ```
+
+**flatten()**
+
+```python
+import numpy as np
+
+array1 = np.array([[1,2,3],[4,5,6]])
+
+print(array1.flatten()) # creates an 1d array
+# [1 2 3 4 5 6]
+```
+
+**Transpose of Matrix**
+
+```python
+import numpy as np
+
+array1 = np.array([[1,2,3],[4,5,6]])
+print(array1.T) # It takes transpose of an array
+# That is, rows are converted into columns & vice versa
+# [[1 4]
+#  [2 5]
+#  [3 6]]
+```
+
+** vstack() & hstack()**
+
+```python
+import numpy as np
+
+array1 = np.array([[1,2,3],[4,5,6]])
+array2 = np.array([[7,8,9],[10,11,12]])
+print(np.vstack((array1,array2))) # stack them vertically
+# (columns are stacked to form 1 colum)
+
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [10 11 12]]
+
+
+print(np.hstack((array1,array2))) # stack horizontally
+# (rows are stacked to form 1 row)
+
+# [[ 1  2  3  7  8  9]
+#  [ 4  5  6 10 11 12]]
+```
+
+### Understand Dimensions, shape and axis in nd array
+
+**Dimensions** - numbers of axes in an array. (e.g 2d array means 2 dims i.e row and column)
+
+**Shape** - size of each dimension (e.g (2,3) means 2 rows & 3 columns).
+
+**Axis** - The dimension on which operation is performed. (starts from 0).

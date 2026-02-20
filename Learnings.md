@@ -6,6 +6,8 @@
 
 **np.asarray()** - Creates a view of original data (no copy). Use this when you only want to analyze/read data. More memory efficient.
 
+---
+
 ### 2. uint8 dtype
 
 uint8 can only hold values from 0 to 255.
@@ -15,3 +17,5 @@ uint8 can only hold values from 0 to 255.
 
 This is why we convert to int32 before manipulating — so values can go beyond 255 or below 0 without wrapping. After clipping, we convert back to uint8 because PIL's fromarray() expects uint8.  
 **See function brighten_image in main.py**
+
+---

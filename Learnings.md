@@ -1,12 +1,12 @@
 # Learnings from project
 
-#### 1. np.array() vs np.asarray()
+### 1. np.array() vs np.asarray()
 
 **np.array()** - Creates a new copy of image data. Use this when you want to manipulate the data.
 
 **np.asarray()** - Creates a view of original data (no copy). Use this when you only want to analyze/read data. More memory efficient.
 
-#### 2. uint8 dtype
+### 2. uint8 dtype
 
 uint8 can only hold values from 0 to 255.
 

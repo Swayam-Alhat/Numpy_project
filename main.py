@@ -1,16 +1,34 @@
 import numpy as np
 from PIL import Image
 
-# open() loads given image as PIL image object.
+ # open() loads given image as PIL image object.
 image = Image.open("./images/leena.jpg")
 
+# function to brighten Image
+def brighten_image():
+    image_array = np.array(image, dtype=np.int32)
+    # add 30 in each pixels
+    result_image_array = image_array + 30
 
-image_array = np.array(image, dtype=np.int32)
+    # we convert values which are less than 0 or more than 255 into 0 (min) & 255 (max)
+    np.clip(result_image_array,0,255,out=result_image_array)
 
-result_image_array = image_array + 20
+    # convert array into image
+    result_image = Image.fromarray(result_image_array.astype(np.uint8))
+    result_image.show(result_image)
 
-# we convert values which are less than 0 or more than 255 into 0 (min) & 255 (max)
-np.clip(result_image_array,0,255,out=result_image_array)
+def darken_image():
+    # convert image into array & change dtype=int32
+    image_array = np.array(image, dtype=np.int32)
 
-result_image = Image.fromarray(result_image_array)
-result_image.show()
+    # perform actual operation to darken an image
+    result_image_array = image_array - 30
+
+    # keep values in array within 0 to 255
+    np.clip(result_image_array,0,255,out=result_image_array)
+
+    # convert back into PIL image object. but before that, change dtype = uint8
+    result_image = Image.fromarray(result_image_array.astype(np.uint8))
+    
+    result_image.show()
+    

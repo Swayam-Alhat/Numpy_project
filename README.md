@@ -427,7 +427,7 @@ print(array1.T) # It takes transpose of an array
 #  [3 6]]
 ```
 
-** vstack() & hstack()**
+**vstack() & hstack()**
 
 ```python
 import numpy as np

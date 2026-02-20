@@ -29,6 +29,23 @@ def darken_image():
 
     # convert back into PIL image object. but before that, change dtype = uint8
     result_image = Image.fromarray(result_image_array.astype(np.uint8))
-    
+
     result_image.show()
     
+def increase_contrast():
+    image_array = np.array(image,dtype=np.int32)
+
+    print(image_array)
+
+    print('  ')
+
+    conditions = [image_array > 128, image_array < 128]
+    choices = [image_array + 30, image_array - 30]
+
+    result_array = np.select(conditions,choices,default=128)
+    
+    np.clip(result_array, 0, 255, out=result_array)
+    result_image = Image.fromarray(result_array)
+
+    result_image.show()
+increase_contrast()

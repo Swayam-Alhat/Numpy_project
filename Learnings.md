@@ -38,6 +38,14 @@ This is why we convert to int32 before manipulating — so values can go beyond 
 
 ## 2. What is Contrast?
 
+Every pixel has a value between 0 to 255, where 128 is the mid-gray (the neutral center point of the scale). The core idea of contrast is that every pixel has a gap or distance from this mid-gray value (128), and contrast operation simply increases or decreases this gap.
+
+```
+128 - 60 = 68
+```
+
+This gap of 68 tells us how far this pixel is sitting from the center. Now, contrast is all about what we do with this gap — either stretch it (pixel moves further from 128, increasing contrast) or shrink it (pixel moves closer to 128, decreasing contrast).
+
 Contrast means **how far pixels are from the middle gray value i.e 128.**
 
 - 128 is the midpoint of 0-255 scale, which represents a neutral gray

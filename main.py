@@ -33,9 +33,8 @@ def darken_image():
     result_image.show()
 
 # contrast
-def increase_contrast():
+def adjust_contrast(factor):
     image_array = np.array(image,dtype=np.float32) # for further formula
-    factor = 1.5
 
     result_array = 128 + (image_array - 128) * factor
     np.clip(result_array,0,255,out=result_array)
@@ -43,16 +42,4 @@ def increase_contrast():
     result_image = Image.fromarray(result_array.astype(np.uint8))
     result_image.show()
 
-
-
-def decrease_contrast():
-    image_array = np.array(image,dtype=np.float32)
-    factor = 0.5
-
-    result_array = 128 + (image_array - 128) * factor
-    np.clip(result_array,0,255,out=result_array)
-
-    result_image = Image.fromarray(result_array.astype(np.uint8))
-
-    result_image.show()
 

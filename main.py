@@ -15,7 +15,7 @@ def brighten_image():
 
     # convert array into image
     result_image = Image.fromarray(result_image_array.astype(np.uint8))
-    result_image.show(result_image)
+    result_image.show()
 
 def darken_image():
     # convert image into array & change dtype=int32
@@ -31,21 +31,32 @@ def darken_image():
     result_image = Image.fromarray(result_image_array.astype(np.uint8))
 
     result_image.show()
-    
+
+# contrast
 def increase_contrast():
     image_array = np.array(image,dtype=np.int32)
-
-    print(image_array)
-
-    print('  ')
 
     conditions = [image_array > 128, image_array < 128]
     choices = [image_array + 30, image_array - 30]
 
-    result_array = np.select(conditions,choices,default=128)
+    result_array = np.select(conditions,choices,default=image_array)
     
     np.clip(result_array, 0, 255, out=result_array)
-    result_image = Image.fromarray(result_array)
+    result_image = Image.fromarray(result_array.astype(np.uint8))
 
     result_image.show()
-increase_contrast()
+
+def decrease_contrast():
+    image_array = np.array(image, dtype=np.int32)
+
+    conditions = [image_array > 128,image_array < 128]
+    choices = [image_array - 10, image_array + 10]
+
+    result_array = np.select(conditions,choices,default=image_array)
+
+    np.clip(result_array,0,255,out=result_array)
+
+    result_image = Image.fromarray(result_array.astype(np.uint8))
+
+    result_image.show()
+

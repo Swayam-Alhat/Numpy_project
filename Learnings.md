@@ -221,7 +221,7 @@ def blur_image():
     # add padding of 1 width from all 4 sides
     padded_array = np.pad(image_array,pad_width=1,mode="constant",constant_values=0)
 
-    rows,cols = padded_array.shape
+    rows,cols = padded_array.shape # 258,258
 
     result_data = []
 

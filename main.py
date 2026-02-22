@@ -71,5 +71,4 @@ def blur_image(intensity):
     result_image = Image.fromarray(result_array.astype(np.uint8))
     result_image.show()
 
-
 blur_image(1)

@@ -51,4 +51,24 @@ def blur_image():
     padded_array = np.pad(image_array,pad_width=1,mode="constant",constant_values=0)
 
     rows,cols = padded_array.shape
+
+    result_data = []
+
+    for i in range(1,rows - 1):
+        result_row = []
+        for j in range(1,cols - 1):
+            sub_matrix = padded_array[i-1:i+2,j-1:j+2]
+            avg = np.mean(sub_matrix)
+            result_row.append(avg)
+
+        result_data.append(result_row)
+    
+    result_array = np.array(result_data)
+    print(result_array.ndim)
+    print(result_array.shape)
+
+    result_image = Image.fromarray(result_array.astype(np.uint8))
+    result_image.show()
+
+
 blur_image()

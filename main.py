@@ -32,7 +32,8 @@ def darken_image():
 
     result_image.show()
 
-# contrast
+# adjust contrast 
+# factor
 def adjust_contrast(factor):
     image_array = np.array(image,dtype=np.float32) # for further formula
 
@@ -42,4 +43,12 @@ def adjust_contrast(factor):
     result_image = Image.fromarray(result_array.astype(np.uint8))
     result_image.show()
 
+# blurs an image
+def blur_image():
+    image_array = np.array(image,dtype=np.float32)
 
+    # add padding of 1 width from all 4 sides
+    padded_array = np.pad(image_array,pad_width=1,mode="constant",constant_values=0)
+
+    rows,cols = padded_array.shape
+blur_image()

@@ -43,32 +43,33 @@ def adjust_contrast(factor):
     result_image = Image.fromarray(result_array.astype(np.uint8))
     result_image.show()
 
-# blurs an image
-def blur_image():
+# consider intensity = 1 and read code. It will be easy to understand
+# That sub_matrix is of 3x3
+# Also read Readme.md file
+def blur_image(intensity):
     image_array = np.array(image,dtype=np.float32)
 
     # add padding of 1 width from all 4 sides
-    padded_array = np.pad(image_array,pad_width=1,mode="constant",constant_values=0)
+    padded_array = np.pad(image_array,pad_width=intensity,mode="constant",constant_values=0)
 
     rows,cols = padded_array.shape
 
     result_data = []
 
-    for i in range(1,rows - 1):
+    for i in range(intensity,rows - intensity):
         result_row = []
-        for j in range(1,cols - 1):
-            sub_matrix = padded_array[i-1:i+2,j-1:j+2]
+        for j in range(intensity,cols - intensity):
+            sub_matrix = padded_array[i-intensity:i+(intensity + 1),
+                                      j-intensity:j+(intensity + 1)]
             avg = np.mean(sub_matrix)
             result_row.append(avg)
 
         result_data.append(result_row)
     
     result_array = np.array(result_data)
-    print(result_array.ndim)
-    print(result_array.shape)
 
     result_image = Image.fromarray(result_array.astype(np.uint8))
     result_image.show()
 
 
-blur_image()
+blur_image(1)

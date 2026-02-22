@@ -201,3 +201,41 @@ Original: 60 → Output: 94. Pixel moved closer to 128. Became more gray. ✅
 - `+ 128` → brings it back to correct scale
 - This formula is applied to **every single pixel** in the image
 - The midpoint pixel (128) **never changes** regardless of factor, because its gap is 0
+
+---
+
+# How Image Blurring Works
+
+For each pixel, we look at its surrounding neighbors (including itself), calculate their average value, and replace the pixel with that average. This creates a blur effect.
+
+For pixels at the edge dont have complete neighbors as other pixels have. So create a padding around an array.
+
+The higher the intensity, the bigger the neighborhood (5×5, 7×7...), so more pixels get mixed together -> stronger blur.
+
+Read below code to understand how to blur an image.
+
+```python
+def blur_image():
+    image_array = np.array(image,dtype=np.float32)
+
+    # add padding of 1 width from all 4 sides
+    padded_array = np.pad(image_array,pad_width=1,mode="constant",constant_values=0)
+
+    rows,cols = padded_array.shape
+
+    result_data = []
+
+    for i in range(1,rows - 1):
+        result_row = []
+        for j in range(1,cols - 1):
+            sub_matrix = padded_array[i-1:i+2,j-1:j+2]
+            avg = np.mean(sub_matrix)
+            result_row.append(avg)
+
+        result_data.append(result_row)
+
+    result_array = np.array(result_data)
+
+    result_image = Image.fromarray(result_array.astype(np.uint8))
+    result_image.show()
+```

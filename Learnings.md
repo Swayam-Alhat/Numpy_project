@@ -21,7 +21,7 @@ This is why we convert to int32 before manipulating — so values can go beyond 
 
 ---
 
-# Image Contrast — Complete Understanding
+# Image Contrast (Grayscale Image)
 
 ---
 
@@ -204,7 +204,7 @@ Original: 60 → Output: 94. Pixel moved closer to 128. Became more gray. ✅
 
 ---
 
-# How Image Blurring Works
+# How Image Blurring Works (Grayscale Image)
 
 For each pixel, we look at its surrounding neighbors (including itself), calculate their average value, and replace the pixel with that average. This creates a blur effect.
 
